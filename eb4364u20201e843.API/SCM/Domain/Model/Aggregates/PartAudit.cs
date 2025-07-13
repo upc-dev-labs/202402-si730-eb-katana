@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using EntityFrameworkCore.CreatedUpdatedDate.Contracts;
 
-namespace eb4364u20201e843.API.Scm.Domain.Model.Aggregates;
+namespace eb4364u20201e843.API.SCM.Domain.Model.Aggregates;
 
 public partial class Part : IEntityWithCreatedUpdatedDate
 {

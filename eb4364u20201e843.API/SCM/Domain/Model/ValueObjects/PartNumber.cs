@@ -1,4 +1,4 @@
-namespace eb4364u20201e843.API.Scm.Domain.Model.ValueObjects;
+namespace eb4364u20201e843.API.SCM.Domain.Model.ValueObjects;
 
 /// <summary>
 ///     Represents the business identifier PartNumber as a value object with a UUID.
@@ -11,8 +11,7 @@ namespace eb4364u20201e843.API.Scm.Domain.Model.ValueObjects;
 public record PartNumber(Guid Identifier)
 {
     /// <summary>
-    ///     Parameterless constructor that generates a new UUID.
-    ///     Useful when creating new Parts.
+    ///     Initializes a new instance of the <see cref="PartNumber"/> record with a specified identifier.
     /// </summary>
     public PartNumber() : this(Guid.NewGuid()) { }
 }

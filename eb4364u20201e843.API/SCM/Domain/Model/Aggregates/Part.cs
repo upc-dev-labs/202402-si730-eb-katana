@@ -1,7 +1,7 @@
-using eb4364u20201e843.API.Scm.Domain.Model.Commands;
-using eb4364u20201e843.API.Scm.Domain.Model.ValueObjects;
+using eb4364u20201e843.API.SCM.Domain.Model.Commands;
+using eb4364u20201e843.API.SCM.Domain.Model.ValueObjects;
 
-namespace eb4364u20201e843.API.Scm.Domain.Model.Aggregates;
+namespace eb4364u20201e843.API.SCM.Domain.Model.Aggregates;
 
 /// <summary>
 ///     Aggregate root representing a Part in Katana Manufacturing.

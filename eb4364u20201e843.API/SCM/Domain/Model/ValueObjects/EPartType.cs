@@ -1,4 +1,4 @@
-namespace eb4364u20201e843.API.Scm.Domain.Model.ValueObjects;
+namespace eb4364u20201e843.API.SCM.Domain.Model.ValueObjects;
 
 /// <summary>
 ///     Enumeration representing the PartType supported by Katana.
