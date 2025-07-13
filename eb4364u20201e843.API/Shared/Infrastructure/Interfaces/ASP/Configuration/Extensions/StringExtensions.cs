@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace eb4364u20201e843.API.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+namespace eb4364u20201e843.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 
 public static partial class StringExtensions
 {

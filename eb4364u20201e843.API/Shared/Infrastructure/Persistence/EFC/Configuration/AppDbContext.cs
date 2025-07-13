@@ -1,8 +1,8 @@
-using eb4364u20201e843.API.Infrastructure.Persistence.EFC.Configuration.Extensions;
+using eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace eb4364u20201e843.API.Infrastructure.Persistence.EFC.Configuration;
+namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 
 /// <summary>
 ///     Application database context

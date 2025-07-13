@@ -1,8 +1,8 @@
-using eb4364u20201e843.API.Infrastructure.Persistence.EFC.Configuration;
 using eb4364u20201e843.API.Shared.Domain.Repositories;
+using eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Microsoft.EntityFrameworkCore;
 
-namespace eb4364u20201e843.API.Infrastructure.Persistence.EFC.Repositories;
+namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 /// <summary>
 ///     Base repository for all repositories

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace eb4364u20201e843.API.Infrastructure.Persistence.EFC.Configuration.Extensions;
+namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 /// <summary>
 ///     Model builder extensions
