@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 /// <summary>
-///     Model builder extensions
+///     Model builder extensions for snake_case and plural naming conventions.
 /// </summary>
 /// <remarks>
 ///     This class contains extension methods for the model builder.
@@ -13,8 +13,9 @@ namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configurati
 public static class ModelBuilderExtensions
 {
     /// <summary>
-    ///     Use snake case naming convention
+    ///     Applies snake_case naming to all the tables, columns, keys, foreign keys, and indexes.
     /// </summary>
+    /// <param name="builder">The ModelBuilder instance</param>
     /// <remarks>
     ///     This method sets the naming convention for the database tables, columns, keys, foreign keys and indexes to snake
     ///     case.

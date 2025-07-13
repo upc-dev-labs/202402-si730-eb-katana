@@ -3,10 +3,10 @@ namespace eb4364u20201e843.API.Shared.Domain.Repositories;
 /// <summary>
 ///     Base repository interface for all repositories
 /// </summary>
+/// <typeparam name="TEntity">The Entity Type</typeparam>
 /// <remarks>
 ///     This interface defines the basic CRUD operations for all repositories
 /// </remarks>
-/// <typeparam name="TEntity">The Entity Type</typeparam>
 public interface IBaseRepository<TEntity>
 {
     /// <summary>

@@ -7,6 +7,7 @@ namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Repositorie
 /// <summary>
 ///     Base repository for all repositories
 /// </summary>
+/// <typeparam name="TEntity">The entity type for the repository</typeparam>
 /// <remarks>
 ///     This class implements the basic CRUD operations for all repositories.
 ///     It requires the entity type to be passed as a generic parameter.

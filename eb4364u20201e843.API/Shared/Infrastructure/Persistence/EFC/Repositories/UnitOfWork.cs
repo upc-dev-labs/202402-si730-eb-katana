@@ -6,6 +6,7 @@ namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Repositorie
 /// <summary>
 ///     Unit of work implementation
 /// </summary>
+/// <param name="context">The database context for the application</param>
 /// <remarks>
 ///     This class implements the basic operations for a unit of work.
 ///     It requires the context to be passed in the constructor.

@@ -3,7 +3,7 @@ using Humanizer;
 namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 /// <summary>
-///     String extensions
+///     String extensions for naming conventions.
 /// </summary>
 /// <remarks>
 ///     This class contains extension methods for strings.
@@ -12,10 +12,10 @@ namespace eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configurati
 public static class StringExtensions
 {
     /// <summary>
-    ///     Convert a string to snake case
+    ///     Converts a string to snake_case.
     /// </summary>
-    /// <param name="text">The string to convert</param>
-    /// <returns>The string converted to snake case</returns>
+    /// <param name="text">The input string</param>
+    /// <returns>snake_case formatted string</returns>
     public static string ToSnakeCase(this string text)
     {
         return new string(Convert(text.GetEnumerator()).ToArray());
@@ -40,10 +40,10 @@ public static class StringExtensions
     }
 
     /// <summary>
-    ///     Pluralize a string
+    ///     Pluralizes a string using Humanizer.
     /// </summary>
-    /// <param name="text">The string to convert</param>
-    /// <returns>The string converted to plural</returns>
+    /// <param name="text">The input string</param>
+    /// <returns>Pluralized string</returns>
     public static string ToPlural(this string text)
     {
         return text.Pluralize(false);
