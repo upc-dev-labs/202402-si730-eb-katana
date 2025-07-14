@@ -8,15 +8,28 @@ namespace eb4364u20201e843.API.MRP.Domain.Model.ValueObjects;
 /// </remarks>
 public record ItemPartNumber
 {
+    /// <summary>
+    ///     Gets the internal database key used for EF Core mapping.
+    ///     Shared with the owning BillOfMaterialsItem entity as a foreign key.
+    /// </summary>
     public int Id { get; private set; }
 
+    /// <summary>
+    ///     Gets the business identifier for the ItemPartNumber, stored as a UUID.
+    /// </summary>
     public Guid Identifier { get; private set; }
 
     /// <summary>
-    ///     Initializes a new instance of the <see cref="ItemPartNumber"/> record with a specified identifier.
+    ///     Initializes a new instance of the <see cref="ItemPartNumber"/> record
+    ///     with a newly generated UUID identifier.
     /// </summary>
     public ItemPartNumber() : this(Guid.NewGuid()) { }
 
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="ItemPartNumber"/> record
+    ///     with a specified UUID identifier.
+    /// </summary>
+    /// <param name="identifier">The UUID to use as the business identifier.</param>
     public ItemPartNumber(Guid identifier)
     {
         Identifier = identifier;
