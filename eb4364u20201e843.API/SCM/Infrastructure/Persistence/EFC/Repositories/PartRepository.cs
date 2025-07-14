@@ -20,13 +20,13 @@ public class PartRepository(AppDbContext context) : BaseRepository<Part>(context
     {
         return await Context.Set<Part>()
             .Include(p => p.PartNumber)
-            .FirstOrDefaultAsync(p => p.PartNumber == partNumber);
+            .FirstOrDefaultAsync(p => p.PartNumber.Identifier == partNumber.Identifier);
     }
 
     /// <inheritdoc />
     public async Task<bool> ExistsByPartNumberAsync(PartNumber partNumber)
     {
         return await Context.Set<Part>()
-            .AnyAsync(p => p.PartNumber == partNumber);
+            .AnyAsync(p => p.PartNumber.Identifier == partNumber.Identifier);
     }
 }
