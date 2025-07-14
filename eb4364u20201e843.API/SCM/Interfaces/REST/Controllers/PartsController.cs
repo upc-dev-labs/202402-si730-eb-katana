@@ -50,18 +50,22 @@ public class PartsController(
             var partResource = PartResourceFromEntityAssembler.ToResourceFromEntity(part);
             return Ok(partResource);
         }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
+        // catch (ArgumentException ex)
+        // {
+        //     return BadRequest(new { error = ex.Message });
+        // }
+        // catch (InvalidOperationException ex)
+        // {
+        //     return BadRequest(new { error = ex.Message });
+        // }
+        // catch (Exception ex)
+        // {
+        //     Console.WriteLine(ex);
+        //     return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error." });
+        // }
         catch (Exception ex)
         {
-            Console.WriteLine(ex);
-            return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error." });
+            return BadRequest(new { Message = ex.Message});
         }
     }
 
@@ -93,18 +97,22 @@ public class PartsController(
                 partResource
             );
         }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
+        // catch (ArgumentException ex)
+        // {
+        //     return BadRequest(new { error = ex.Message });
+        // }
+        // catch (InvalidOperationException ex)
+        // {
+        //     return BadRequest(new { error = ex.Message });
+        // }
+        // catch (Exception ex)
+        // {
+        //     Console.WriteLine(ex);
+        //     return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error." });
+        // }
         catch (Exception ex)
         {
-            Console.WriteLine(ex);
-            return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error." });
+            return BadRequest(new { Message = ex.Message});
         }
     }
 }
