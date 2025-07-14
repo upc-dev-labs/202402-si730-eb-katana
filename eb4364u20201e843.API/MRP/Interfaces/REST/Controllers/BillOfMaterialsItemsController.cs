@@ -52,18 +52,9 @@ public class BillOfMaterialsItemsController(
             var billOfMaterialsItemResource = BillOfMaterialsItemResourceFromEntityAssembler.ToResourceFromEntity(billOfMaterialsItem);
             return Created(string.Empty, billOfMaterialsItemResource);
         }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
         catch (Exception ex)
         {
-            Console.WriteLine(ex);
-            return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error." });
+            return BadRequest(new { Message = ex.Message});
         }
     }
 }
