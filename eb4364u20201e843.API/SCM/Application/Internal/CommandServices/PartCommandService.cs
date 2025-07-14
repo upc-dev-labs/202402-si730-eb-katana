@@ -41,7 +41,7 @@ public class PartCommandService(
         var minCapacityThreshold = configuration.GetValue<int>("CapacityThresholds:minCapacityThreshold");
         var maxCapacityThreshold = configuration.GetValue<int>("CapacityThresholds:maxCapacityThreshold");
 
-        if (command.MaxProductionQuantity < minCapacityThreshold || command.MaxProductionQuantity > maxCapacityThreshold)
+        if (command.MaxProductionCapacity < minCapacityThreshold || command.MaxProductionCapacity > maxCapacityThreshold)
             throw new Exception($"Max production quantity must be between {minCapacityThreshold} and {maxCapacityThreshold}.");
 
         var part = new Part(command);
