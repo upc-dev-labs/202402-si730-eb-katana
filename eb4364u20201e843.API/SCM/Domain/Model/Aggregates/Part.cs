@@ -21,7 +21,7 @@ public partial class Part
 
     public int CurrentProductionQuantity { get; private set; }
 
-    public int MaxProductionQuantity { get; private set; }
+    public int MaxProductionCapacity { get; private set; }
 
     /// <summary>
     ///     Protected parameterless constructor required by Entity Framework Core.
@@ -31,7 +31,7 @@ public partial class Part
         PartNumber = new PartNumber();
         Name = string.Empty;
         CurrentProductionQuantity = 0;
-        MaxProductionQuantity = 0;
+        MaxProductionCapacity = 0;
     }
 
     /// <summary>
@@ -43,7 +43,22 @@ public partial class Part
         Name = command.Name;
         PartType = FromAbbreviation(command.PartType);
         CurrentProductionQuantity = 0;
-        MaxProductionQuantity = command.MaxProductionQuantity;
+        MaxProductionCapacity = command.MaxProductionCapacity;
+    }
+
+    /// <summary>
+    ///     Attempts to reserve production capacity for the given quantity.
+    /// </summary>
+    /// <param name="requiredQuantity">Quantity to reserve.</param>
+    /// <returns>True if reservation succeeds; false if capacity exceeded.</returns>
+    public bool TryReserveCapacity(int requiredQuantity)
+    {
+        if (requiredQuantity <= 0) return false;
+
+        if (CurrentProductionQuantity + requiredQuantity > MaxProductionCapacity) return false;
+
+        CurrentProductionQuantity += requiredQuantity;
+        return true;
     }
 
     /// <summary>
