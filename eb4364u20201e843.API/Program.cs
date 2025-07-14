@@ -1,3 +1,16 @@
+using eb4364u20201e843.API.MRP.Application.Internal.CommandServices;
+using eb4364u20201e843.API.MRP.Application.Internal.OutboundServices.ACL;
+using eb4364u20201e843.API.MRP.Domain.Repositories;
+using eb4364u20201e843.API.MRP.Domain.Services;
+using eb4364u20201e843.API.MRP.Infrastructure.Persistence.EFC.Repositories;
+using eb4364u20201e843.API.SCM.Application.ACL;
+using eb4364u20201e843.API.SCM.Application.Internal.CommandServices;
+using eb4364u20201e843.API.SCM.Application.Internal.QueryServices;
+using eb4364u20201e843.API.SCM.Domain.Repositories;
+using eb4364u20201e843.API.SCM.Domain.Services;
+using eb4364u20201e843.API.SCM.Infrastructure.Configuration;
+using eb4364u20201e843.API.SCM.Infrastructure.Persistence.EFC.Repositories;
+using eb4364u20201e843.API.SCM.Interfaces.ACL;
 using eb4364u20201e843.API.Shared.Domain.Repositories;
 using eb4364u20201e843.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using eb4364u20201e843.API.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -68,8 +81,20 @@ builder.Services.AddSwaggerGen(options =>
 // Shared Bounded Context Dependency Injection Configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-// Dependency Injection for Bounded Context
-// Dependency Injection
+// Dependency Injection for SCM Bounded Context
+builder.Services.AddScoped<IPartRepository, PartRepository>();
+builder.Services.AddScoped<IPartCommandService, PartCommandService>();
+builder.Services.AddScoped<IPartQueryService, PartQueryService>();
+builder.Services.AddScoped<IScmContextFacade, ScmContextFacade>();
+
+// Dependency Injection for MRP Bounded Context
+builder.Services.AddScoped<ExternalScmService>();
+builder.Services.AddScoped<IBillOfMaterialsItemRepository, BillOfMaterialsItemRepository>();
+builder.Services.AddScoped<IBillOfMaterialsItemCommandService, BillOfMaterialsItemCommandService>();
+
+// Dependency for appsettings.json
+// builder.Services.Configure<CapacityThresholdsOptions>(
+//     builder.Configuration.GetSection("CapacityThresholds"));
 
 var app = builder.Build();
 
